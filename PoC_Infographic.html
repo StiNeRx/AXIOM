@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoC Infographic: Math as a Mother Tongue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            padding: 3rem;
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #1c1e21;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .header .subtitle {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-top: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .header .demographic {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-top: 1rem;
+            font-weight: 400;
+        }
+
+        .philosophy {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .philosophy .approach {
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        
+        .philosophy .traditional {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+        }
+
+        .philosophy .axiom {
+            background-color: #e6f7ff;
+            border: 1px solid #91d5ff;
+        }
+
+        .philosophy h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .philosophy .axiom h2 { color: #0056b3; }
+        .philosophy .traditional h2 { color: #495057; }
+
+        .philosophy p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #343a40;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .module-card {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            border-top: 5px solid;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        }
+
+        .module-card.nouns { border-color: #17a2b8; }
+        .module-card.adjectives { border-color: #28a745; }
+        .module-card.verbs { border-color: #dc3545; }
+
+        .module-card .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+        }
+
+        .module-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .module-card .type {
+            font-size: 1rem;
+            font-weight: 400;
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .nouns h3, .nouns .type { color: #17a2b8; }
+        .adjectives h3, .adjectives .type { color: #28a745; }
+        .verbs h3, .verbs .type { color: #dc3545; }
+
+        .module-card .section {
+            margin-bottom: 1.5rem;
+        }
+        .module-card .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .module-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #495057;
+            margin: 0 0 0.5rem 0;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 0.5rem;
+        }
+
+        .module-card p, .module-card li {
+            font-size: 0.95rem;
+            color: #212529;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .module-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .module-card .syntax-item {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        .module-card .syntax-item span {
+            font-family: monospace;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .nouns .syntax-item span { color: #17a2b8; }
+        .adjectives .syntax-item span { color: #28a745; }
+        .verbs .syntax-item span { color: #dc3545; }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e9ecef;
+        }
+        .footer h2 {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .footer-card {
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+        }
+        .footer-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top:0;
+            color: #007bff;
+        }
+        .footer-card p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+        .footer-card .label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #6c757d;
+            text-transform: uppercase;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Math as a Mother Tongue</h1>
+            <p class="subtitle">A Proof of Concept for AXIOM Literacy</p>
+            <p class="demographic">Target Demographic: Ages 4-7 (Pre-Primary)</p>
+        </header>
+
+        <section class="philosophy">
+            <div class="approach traditional">
+                <h2>TRADITIONAL APPROACH</h2>
+                <p>"Here are 3 apples. Add 2. How many?"<br><strong>Focus: Calculation</strong></p>
+            </div>
+            <div class="approach axiom">
+                <h2>AXIOM LITERACY</h2>
+                <p>"Here is a pile of apples. Are they inside the bowl or outside?"<br><strong>Focus: Logic & Relationships</strong></p>
+            </div>
+        </section>
+
+        <main class="modules-grid">
+            <!-- Module A: Nouns -->
+            <div class="module-card nouns">
+                <!-- SVG Icon for Venn Hoops -->
+                <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="50" r="30" fill="#17a2b8" fill-opacity="0.3"/>
+                    <circle cx="60" cy="50" r="30" fill="#17a2b8" fill-opacity="0.3"/>
+                    <path d="M 50 50 m -22.9,0 a 30,30 0 0,1 45.8,0 a 30,30 0 0,1 -45.8,0" fill="#17a2b8" fill-opacity="0.4"></path>
+                </svg>
+                <h3>The Nouns</h3>
+                <p class="type">Set Theory & Logic</p>
+
+                <div class="section">
+                    <h4>The Tool</h4>
+                    <p><strong>"The Venn Hoops"</strong> — Two hula hoops on the floor.</p>
+                </div>
+                <div class="section">
+                    <h4>The Lesson</h4>
+                    <p>Children sort a bucket of mixed toys into a "Red Things" hoop and a "Plastic Things" hoop, learning to categorize physically.</p>
+                </div>
+                <div class="section">
+                    <h4>The "Reading" Moment</h4>
+                    <ul>
+                        <li class="syntax-item"><span>∩</span> Learns this means "The Middle Part" (Intersection).</li>
+                        <li class="syntax-item"><span>∪</span> Learns this means "Everything" (Union).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Module B: Adjectives -->
+            <div class="module-card adjectives">
+                <!-- SVG Icon for Topology -->
+                <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,15 A35,35 0 1,0 50,85 A35,35 0 1,0 50,15 Z M50,35 A15,15 0 1,1 50,65 A15,15 0 1,1 50,35 Z" fill="#28a745" fill-opacity="0.8"/>
+                </svg>
+                <h3>The Adjectives</h3>
+                <p class="type">Topology & Space</p>
+
+                <div class="section">
+                    <h4>The Tool</h4>
+                    <p><strong>"The Clay Lab"</strong> — A simple ball of Play-Doh.</p>
+                </div>
+                <div class="section">
+                    <h4>The Lesson</h4>
+                    <p>A child is shown how a coffee mug with a handle can be squished and morphed into a doughnut without tearing it.</p>
+                </div>
+                <div class="section">
+                    <h4>The "Reading" Moment</h4>
+                    <ul>
+                        <li class="syntax-item"><span>○</span> Understands a doughnut and a coffee mug are the "same word" because they both have one hole (Genus 1).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Module C: Verbs -->
+            <div class="module-card verbs">
+                <!-- SVG Icon for Vectors -->
+                <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead-up" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#dc3545"/>
+                        </marker>
+                         <marker id="arrowhead-right" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto" >
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#dc3545"/>
+                        </marker>
+                    </defs>
+                    <line x1="30" y1="70" x2="30" y2="30" stroke="#dc3545" stroke-width="4" marker-end="url(#arrowhead-up)"/>
+                    <line x1="30" y1="30" x2="70" y2="30" stroke="#dc3545" stroke-width="4" marker-end="url(#arrowhead-right)"/>
+                     <line x1="30" y1="70" x2="70" y2="30" stroke="#dc3545" stroke-width="2" stroke-dasharray="4"/>
+                </svg>
+                <h3>The Verbs</h3>
+                <p class="type">Vectors & Functions</p>
+
+                <div class="section">
+                    <h4>The Tool</h4>
+                    <p><strong>"The Arrow Floor"</strong> — A grid made of tape on the floor.</p>
+                </div>
+                <div class="section">
+                    <h4>The Lesson</h4>
+                    <p>A child acts as a "particle," following cards with arrows (direction) and numbers (steps) to walk a path on the grid.</p>
+                </div>
+                <div class="section">
+                    <h4>The "Reading" Moment</h4>
+                     <ul>
+                        <li class="syntax-item"><span>↑ + →</span> Physically performs vector addition, walking Up then Right to find their new position relative to the start (the hypotenuse).</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <h2>The Expected Outcome: A Literacy Test</h2>
+            <div class="footer-content">
+                <div class="footer-card">
+                    <p class="label">When shown two overlapping circles with a dot in the middle...</p>
+                    <h3>AXIOM Student Sees:</h3>
+                    <p>"Something that belongs to both groups."</p>
+                    <p class="label">(Logic)</p>
+                </div>
+                <div class="footer-card">
+                    <p class="label">When shown a coffee mug and a doughnut...</p>
+                    <h3>AXIOM Student Sees:</h3>
+                    <p>"Objects that both have one hole."</p>
+                    <p class="label">(Topology)</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

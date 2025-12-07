@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project AXIOM: Architecting India's Scientific Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Palette: Vibrant Future (Cyan/Blue/Purple) 
+         Primary: #00d2ff
+         Secondary: #3a7bd5
+         Accent: #9d50bb
+         Dark: #1a202c
+    -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; color: #1f2937; }
+        .gradient-text {
+            background: linear-gradient(to right, #00d2ff, #3a7bd5, #9d50bb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 50%, #9d50bb 100%);
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-2px); }
+        
+        /* Chart Container Styling - MANDATORY */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Prevent excessive width */
+            height: 300px;    /* Base height */
+            max-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 350px; }
+        }
+    </style>
+    <!-- 
+    PLAN NARRATIVE SUMMARY:
+    1. Hook: The Crisis of Scientific Literacy (1% vs 99%). The Problem: Prussian Model.
+    2. Philosophy: The Spiral Curriculum (Intuition -> Syntax -> Rigor).
+    3. Architecture: The 4 Pillars (Polymath vs Specialist).
+    4. Methodology: Math as Mother Tongue (Sets, Topology, Vectors).
+    5. Comparison: AXIOM vs Current Indian System (Qualitative scores visualized).
+    6. Rollout: Implementation Budget & Phases.
+    7. Impact: Future projections ($10T Economy).
+    -->
+</head>
+<body class="antialiased">
+
+    <!-- Navigation / Header -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-extrabold tracking-tight gradient-text">PROJECT AXIOM</span>
+                </div>
+                <div class="flex items-center space-x-4 text-sm font-medium text-gray-500">
+                    <span class="hidden md:block">Advanced Xenial Intuition & Observation Model</span>
+                    <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs">Official Proposal</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: The Crisis (Hook) -->
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">India's Hidden Crisis</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+            India produces millions of STEM graduates annually, yet "True Scientific Literacy"—the ability to apply first principles to novel problems—remains critically low. We are training technicians, not innovators.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <!-- Big Stat -->
+            <div class="card bg-gray-900 text-white flex flex-col justify-center items-center h-64">
+                <span class="text-8xl font-black text-[#00d2ff]">1%</span>
+                <span class="text-xl font-medium mt-2">True Scientific Literacy</span>
+                <p class="text-gray-400 text-sm mt-4 px-8 text-center">Estimated percentage of population capable of applying first-principles thinking to complex, novel problems.</p>
+            </div>
+            
+            <!-- Chart: The Gap -->
+            <div class="card flex flex-col">
+                <h3 class="text-lg font-bold text-gray-800 mb-2">The Output Gap</h3>
+                <p class="text-sm text-gray-500 mb-4">While graduation numbers are high, the "Innovation Yield" is disproportionately low due to rote memorization methods.</p>
+                <div class="flex-grow flex items-center justify-center">
+                    <div class="chart-container">
+                        <canvas id="literacyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 2: The Core Philosophy -->
+    <section class="bg-white py-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Solution: Recursive Spiral Curriculum</h2>
+            <p class="text-gray-600 mb-8 max-w-3xl">
+                Current education teaches subjects in silos. AXIOM introduces high-level realities immediately, then deconstructs them over time. We harness the neuroplasticity of ages 4-7 to build intuition before formalism.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Phase 1 -->
+                <div class="card border-l-4 border-[#00d2ff]">
+                    <div class="text-[#00d2ff] text-xs font-bold uppercase tracking-wide mb-1">Ages 4-7</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Phase I: The Intuition</h3>
+                    <p class="text-gray-600 text-sm mb-4">Visuospatial & Tactile. No textbooks. Direct exposure to anomalies.</p>
+                    <div class="bg-gray-50 p-3 rounded-md">
+                        <span class="block text-xs font-semibold text-gray-500">EXAMPLE: GRAVITY</span>
+                        <span class="block text-sm text-gray-800">Rolling marbles on a stretched fabric sheet.</span>
+                        <span class="block text-xs text-blue-600 mt-1">Goal: "See" geometry.</span>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="card border-l-4 border-[#3a7bd5]">
+                    <div class="text-[#3a7bd5] text-xs font-bold uppercase tracking-wide mb-1">Ages 8-12</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Phase II: The Syntax</h3>
+                    <p class="text-gray-600 text-sm mb-4">Deconstruction. Giving names to phenomena. Introduction of Logic.</p>
+                    <div class="bg-gray-50 p-3 rounded-md">
+                        <span class="block text-xs font-semibold text-gray-500">EXAMPLE: GRAVITY</span>
+                        <span class="block text-sm text-gray-800">Explaining "Geodesics" & Vectors using graphs.</span>
+                        <span class="block text-xs text-blue-600 mt-1">Goal: Define the path.</span>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="card border-l-4 border-[#9d50bb]">
+                    <div class="text-[#9d50bb] text-xs font-bold uppercase tracking-wide mb-1">Ages 13-16</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Phase III: The Rigor</h3>
+                    <p class="text-gray-600 text-sm mb-4">Formalization. Deriving standard formulas from intuition.</p>
+                    <div class="bg-gray-50 p-3 rounded-md">
+                        <span class="block text-xs font-semibold text-gray-500">EXAMPLE: GRAVITY</span>
+                        <span class="block text-sm text-gray-800">Einstein Field Equations. $G_{\mu\nu} = T_{\mu\nu}$</span>
+                        <span class="block text-xs text-blue-600 mt-1">Goal: Calculate the system.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The 4 Pillars (Diversification) -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Creating Polymaths, Not Just Technicians</h2>
+            <p class="text-gray-600 mb-8 max-w-3xl">
+                The current "Stream System" (Science vs. Arts) creates fragmented specialists. AXIOM ensures every student builds competency across four unified pillars of reality.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Radar Chart -->
+                <div class="card">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Competency Profile: AXIOM vs. Current Model</h3>
+                    <p class="text-sm text-gray-500 mb-4">Comparing the holistic development of a Grade 12 student.</p>
+                    <div class="chart-container">
+                        <canvas id="pillarChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Pillars Explanation -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="card bg-white border border-gray-100">
+                        <h4 class="font-bold text-[#00d2ff] mb-1">1. Physical World</h4>
+                        <p class="text-xs text-gray-500 mb-2">Matter & Energy</p>
+                        <p class="text-sm text-gray-700">From observing nature to Thermodynamics and DNA Syntax.</p>
+                    </div>
+                    <div class="card bg-white border border-gray-100">
+                        <h4 class="font-bold text-[#3a7bd5] mb-1">2. Human World</h4>
+                        <p class="text-xs text-gray-500 mb-2">Causality & Systems</p>
+                        <p class="text-sm text-gray-700">History as Game Theory. Economics via "Playground Markets".</p>
+                    </div>
+                    <div class="card bg-white border border-gray-100">
+                        <h4 class="font-bold text-[#9d50bb] mb-1">3. Expressive World</h4>
+                        <p class="text-xs text-gray-500 mb-2">Pattern & Communication</p>
+                        <p class="text-sm text-gray-700">Music as "Math in Time". Literature as Archetypal Psychology.</p>
+                    </div>
+                    <div class="card bg-white border border-gray-100">
+                        <h4 class="font-bold text-gray-800 mb-1">4. Logical World</h4>
+                        <p class="text-xs text-gray-500 mb-2">Abstract Systems</p>
+                        <p class="text-sm text-gray-700">From physical logic gates (dominoes) to Symbolic Logic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Math as Literacy (PoC) -->
+    <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Proof of Concept: Math as a Mother Tongue</h2>
+            <p class="text-gray-600 mb-8 max-w-3xl">
+                For ages 4-7, we replace arithmetic calculation with "Reality Literacy." We teach children to read the structure of the universe using physical syntax: Sets, Topology, and Vectors.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <!-- Module A -->
+                <div class="card border-t-4 border-[#00d2ff] hover:shadow-lg">
+                    <div class="text-6xl mb-4 text-gray-800">∩</div>
+                    <h3 class="text-xl font-bold text-gray-900">Sets & Logic</h3>
+                    <p class="text-xs text-gray-500 uppercase tracking-wide mb-4">The Nouns</p>
+                    <p class="text-sm text-gray-600 mb-4">Using <strong>Venn Hoops</strong> to sort toys.</p>
+                    <div class="bg-gray-100 p-2 rounded text-xs text-left">
+                        <p><strong>Goal:</strong> Read "Intersection"</p>
+                        <p><strong>Test:</strong> Sees overlapping circles as a shared relationship, not just shapes.</p>
+                    </div>
+                </div>
+
+                <!-- Module B -->
+                <div class="card border-t-4 border-[#3a7bd5] hover:shadow-lg">
+                    <div class="text-6xl mb-4 text-gray-800">○</div>
+                    <h3 class="text-xl font-bold text-gray-900">Topology</h3>
+                    <p class="text-xs text-gray-500 uppercase tracking-wide mb-4">The Adjectives</p>
+                    <p class="text-sm text-gray-600 mb-4">Using <strong>Clay</strong> to morph shapes.</p>
+                    <div class="bg-gray-100 p-2 rounded text-xs text-left">
+                        <p><strong>Goal:</strong> Read "Connectivity"</p>
+                        <p><strong>Test:</strong> Identifies a Coffee Mug and a Doughnut as the same object (Genus 1).</p>
+                    </div>
+                </div>
+
+                <!-- Module C -->
+                <div class="card border-t-4 border-[#9d50bb] hover:shadow-lg">
+                    <div class="text-6xl mb-4 text-gray-800">→</div>
+                    <h3 class="text-xl font-bold text-gray-900">Vectors</h3>
+                    <p class="text-xs text-gray-500 uppercase tracking-wide mb-4">The Verbs</p>
+                    <p class="text-sm text-gray-600 mb-4">Using <strong>Floor Grids</strong> to walk paths.</p>
+                    <div class="bg-gray-100 p-2 rounded text-xs text-left">
+                        <p><strong>Goal:</strong> Read "Direction"</p>
+                        <p><strong>Test:</strong> Physically performs vector addition ($\uparrow + \rightarrow$) without numbers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Strategic Comparison -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">System Analysis: AXIOM vs. Status Quo</h2>
+            <p class="text-gray-600 mb-8 max-w-3xl">
+                Comparing the educational outcomes of the proposed model against the existing Class 1-12 structure in India.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Comparison Chart -->
+                <div class="card flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Outcome Metrics Comparison</h3>
+                    <p class="text-sm text-gray-500 mb-4">Projected improvements in key cognitive areas.</p>
+                    <div class="chart-container">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Textual Analysis -->
+                <div class="space-y-4">
+                    <div class="card border-l-4 border-gray-400">
+                        <h4 class="font-bold text-gray-800">The "Exam Barrier" Strategy</h4>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <strong>Challenge:</strong> Indian parents fear risking JEE/NEET results.
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <strong>AXIOM Solution:</strong> A dedicated "Bridge Module" (Classes 11-12). AXIOM builds <em>Understanding</em> (Competency) first. The Bridge Module then trains for <em>Speed</em> (Optimization). A student who understands Calculus can be trained for speed; a rote learner cannot be trained for innovation.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <div class="text-xs font-bold text-red-500 uppercase mb-1">Current Primary</div>
+                            <p class="text-sm text-gray-800">Focus: Discipline</p>
+                            <p class="text-xs text-gray-500">Instills fear of failure.</p>
+                        </div>
+                        <div class="p-4 bg-white rounded shadow-sm border border-blue-100">
+                            <div class="text-xs font-bold text-[#00d2ff] uppercase mb-1">AXIOM Primary</div>
+                            <p class="text-sm text-gray-800">Focus: Curiosity</p>
+                            <p class="text-xs text-gray-500">Preserves inquiry.</p>
+                        </div>
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <div class="text-xs font-bold text-red-500 uppercase mb-1">Current Middle</div>
+                            <p class="text-sm text-gray-800">Fragmentation</p>
+                            <p class="text-xs text-gray-500">Isolated subjects.</p>
+                        </div>
+                        <div class="p-4 bg-white rounded shadow-sm border border-blue-100">
+                            <div class="text-xs font-bold text-[#3a7bd5] uppercase mb-1">AXIOM Middle</div>
+                            <p class="text-sm text-gray-800">Unified Projects</p>
+                            <p class="text-xs text-gray-500">Civilization building.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Rollout Plan -->
+    <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Implementation & Budget</h2>
+            <p class="text-gray-600 mb-8 max-w-3xl">
+                A "Digital-First" rollout ensures scalability and equity, aligning with Digital India. The initial pilot requires a ₹50 Crore grant.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Budget Chart -->
+                <div class="card flex flex-col items-center">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Pilot Budget Allocation</h3>
+                    <p class="text-sm text-gray-500 mb-4">Total: ₹50 Crores</p>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="card md:col-span-2">
+                    <h3 class="text-lg font-bold text-gray-800 mb-6">Rollout Timeline</h3>
+                    <div class="relative">
+                        <!-- Line -->
+                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+
+                        <!-- Item 1 -->
+                        <div class="relative pl-10 mb-8">
+                            <div class="absolute left-2 top-1.5 w-4 h-4 bg-[#00d2ff] rounded-full transform -translate-x-1/2"></div>
+                            <h4 class="font-bold text-gray-900">Phase 1: The Digital Bridge</h4>
+                            <span class="text-xs font-semibold text-blue-600">Months 1-12</span>
+                            <p class="text-sm text-gray-600 mt-1">Launch "AXIOM Library" Repository. 100 Deconstruction Modules. Reach 10 Million parents via social media.</p>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="relative pl-10 mb-8">
+                            <div class="absolute left-2 top-1.5 w-4 h-4 bg-[#3a7bd5] rounded-full transform -translate-x-1/2"></div>
+                            <h4 class="font-bold text-gray-900">Phase 2: The Pilot Hubs</h4>
+                            <span class="text-xs font-semibold text-blue-600">Months 13-24</span>
+                            <p class="text-sm text-gray-600 mt-1">Establish 10 Model Innovation Centers (MICs). Evening labs for tactile learning in aspirational districts.</p>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="relative pl-10">
+                            <div class="absolute left-2 top-1.5 w-4 h-4 bg-[#9d50bb] rounded-full transform -translate-x-1/2"></div>
+                            <h4 class="font-bold text-gray-900">Phase 3: Institutional Integration</h4>
+                            <span class="text-xs font-semibold text-blue-600">Year 3+</span>
+                            <p class="text-sm text-gray-600 mt-1">NEP 2020 Integration. Replace rote Science/Math chapters in Grades 1-5 with AXIOM modules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold mb-4">Project AXIOM</h2>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                Democratizing "Genius-level" intuition. Ensuring the next Ramanujan does not slip through the cracks.
+            </p>
+            <div class="text-xs text-gray-600">
+                Concepts derived from J. Bruner (Spiral Curriculum), R. Feynman (Deep Understanding), and M. Montessori (Tactile Learning).
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart Scripts -->
+    <script>
+        // --- Helper Functions ---
+        
+        // Label wrapping logic for Chart.js (max 16 chars)
+        function splitLabel(label) {
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Process labels for all charts
+        function processLabels(labels) {
+            return labels.map(label => splitLabel(label));
+        }
+
+        // Common Tooltip Config
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- Chart 1: The Literacy Gap (Donut) ---
+        const ctxLiteracy = document.getElementById('literacyChart').getContext('2d');
+        new Chart(ctxLiteracy, {
+            type: 'doughnut',
+            data: {
+                labels: processLabels(['True Scientific Literacy', 'Rote Learners / Technicians']),
+                datasets: [{
+                    data: [1, 99],
+                    backgroundColor: ['#00d2ff', '#e5e7eb'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: tooltipConfig,
+                    title: { display: true, text: 'The 1% Problem' }
+                }
+            }
+        });
+
+        // --- Chart 2: Pillars Radar Chart ---
+        const ctxPillar = document.getElementById('pillarChart').getContext('2d');
+        new Chart(ctxPillar, {
+            type: 'radar',
+            data: {
+                labels: processLabels(['Physical World', 'Human World (History/Econ)', 'Expressive World (Art)', 'Logical World (Code)', 'Exam Optimization']),
+                datasets: [{
+                    label: 'AXIOM Polymath',
+                    data: [90, 85, 80, 95, 85], // Balanced high scores
+                    fill: true,
+                    backgroundColor: 'rgba(0, 210, 255, 0.2)',
+                    borderColor: '#00d2ff',
+                    pointBackgroundColor: '#00d2ff',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#00d2ff'
+                }, {
+                    label: 'Current Science Student',
+                    data: [75, 20, 10, 60, 95], // High exam/science, low humanities
+                    fill: true,
+                    backgroundColor: 'rgba(157, 80, 187, 0.2)',
+                    borderColor: '#9d50bb',
+                    pointBackgroundColor: '#9d50bb',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#9d50bb'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                },
+                plugins: {
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        // --- Chart 3: Comparison Bar Chart ---
+        const ctxComparison = document.getElementById('comparisonChart').getContext('2d');
+        new Chart(ctxComparison, {
+            type: 'bar',
+            data: {
+                labels: processLabels(['Curiosity Retention', 'Systems Thinking', 'Real-World Application', 'Innovation Potential']),
+                datasets: [{
+                    label: 'Current System',
+                    data: [30, 25, 40, 20],
+                    backgroundColor: '#e5e7eb',
+                    borderRadius: 4
+                }, {
+                    label: 'AXIOM Model',
+                    data: [95, 90, 95, 85],
+                    backgroundColor: '#3a7bd5',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true, max: 100, title: { display: true, text: 'Competency Score (0-100)' } }
+                },
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { position: 'top' }
+                }
+            }
+        });
+
+        // --- Chart 4: Budget Doughnut ---
+        const ctxBudget = document.getElementById('budgetChart').getContext('2d');
+        new Chart(ctxBudget, {
+            type: 'pie',
+            data: {
+                labels: processLabels(['Pilot Infrastructure (Labs)', 'Digital Content Factory', 'Teacher Training', 'Project Management']),
+                datasets: [{
+                    data: [25, 10, 10, 5], // 50 Cr Total: 25, 10, 10, 5
+                    backgroundColor: ['#00d2ff', '#3a7bd5', '#9d50bb', '#1f2937'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { boxWidth: 12, font: { size: 10 } } },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
